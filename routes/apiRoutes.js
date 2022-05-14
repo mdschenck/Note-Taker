@@ -33,7 +33,8 @@ router.post("/notes", (req, res) => {
 });
 
 router.delete("/notes/:id", (req, res) => {
-  const noteId = req.params.note_id;
+  console.log(req.params.path);
+  const noteId = req.params.note_id; // <-- need to get request path :ID?
   readAndDelete(noteId, "./db/db.json");
   res.json("Sucess - Note Deleted");
 });

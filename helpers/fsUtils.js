@@ -31,7 +31,7 @@ const readAndAppend = (content, file) => {
       console.log(parsedData);
       parsedData.push(content);
       console.log(parsedData);
-      writeToFile(file, [parsedData]);
+      writeToFile(file, parsedData);
     }
   });
 };
@@ -44,7 +44,7 @@ const readAndDelete = (content, file) => {
       const parsedData = JSON.parse(data);
 
       const filteredData = parsedData.filter((note) => {
-        return note.id !== id;
+        return note.id !== content;
       });
 
       writeToFile(file, filteredData);
