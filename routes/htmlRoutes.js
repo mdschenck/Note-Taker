@@ -8,7 +8,7 @@ router.get("/notes", (req, res) => {
 
 // 404 Error HTML Route
 router.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../public/404.html"));
+  res.sendFile(path.join(__dirname, "./public/404.html"));
 });
 
 module.exports = router;

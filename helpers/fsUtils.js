@@ -20,11 +20,15 @@ const writeToFile = (destination, content) =>
  *  @returns {void} Nothing
  */
 const readAndAppend = (content, file) => {
+  console.log("read and append executed in fsUtils");
+  console.log("content:" + content);
   fs.readFile(file, "utf8", (err, data) => {
+    console.log(data);
     if (err) {
       console.error(err);
     } else {
       const parsedData = JSON.parse(data);
+      console.log(parsedData);
       parsedData.push(content);
     }
   });
