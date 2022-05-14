@@ -1,5 +1,5 @@
 const path = require("path");
-const router = require("express").router();
+const router = require("express").Router();
 
 // Notes HTML Route
 router.get("/notes", (req, res) => {
