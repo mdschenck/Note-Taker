@@ -31,9 +31,5 @@ notes.post("/", (req, res) => {
   }
 });
 
-notes.get("*", (req, res) => {
-  res.error(`Error creating note.`);
-  console.log("wildcard route 404");
-});
 
 module.exports = notes;
