@@ -1,14 +1,14 @@
 const express = require("express");
 const path = require("path");
-// const { clog } = require("./middleware/clog");
+// const { clog } = require("./middleware/clog");   **Delete Me?? 
 const api = require("./routes/index.js");
 
 const PORT = process.env.port || 3001;
 
 const app = express();
 
-// Import custom middleware, "cLog"
-app.use(clog);
+// // Import custom middleware, "cLog"  **Delete Me?? 
+// app.use(clog);
 
 // Middleware for parsing JSON and urlencoded form data
 app.use(express.json());
@@ -25,6 +25,11 @@ app.get("/", (req, res) =>
 // GET Route for feedback page
 app.get("/feedback", (req, res) =>
   res.sendFile(path.join(__dirname, "/public/pages/feedback.html"))
+);
+
+// Wildcard Route for incorrect request
+app.404("/", (req, res) =>
+  res.sendFile(path.join(__dirname, "/public/index.html"))
 );
 
 app.listen(PORT, () =>
