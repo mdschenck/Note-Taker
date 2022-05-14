@@ -4,11 +4,11 @@ const {
   readAndAppend,
   writeToFile,
   readAndDelete,
-} = require("../helpers/fs");
+} = require("../helpers/fsUtils");
 const { v4: uuidv4 } = require("uuid");
 
 router.get("/notes", (req, res) => {
-  readFromFile("./db/db.json").then((data) => res.json(JSON.parse(data)));
+  readFromFile("../db/db.json").then((data) => res.json(JSON.parse(data)));
   console.log("Get Note Route Called");
 });
 
@@ -23,7 +23,7 @@ router.post("/notes", (req, res) => {
       note_id: uuidv4(),
     };
 
-    readAndAppend(newNote, "./db/notes.json");
+    readAndAppend(newNote, "../db/notes.json");
     res.json(newNote);
   } else {
     res.error(`Error creating note.`);
