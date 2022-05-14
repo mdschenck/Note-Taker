@@ -30,6 +30,8 @@ const readAndAppend = (content, file) => {
       const parsedData = JSON.parse(data);
       console.log(parsedData);
       parsedData.push(content);
+      console.log(parsedData);
+      writeToFile(file, [parsedData]);
     }
   });
 };

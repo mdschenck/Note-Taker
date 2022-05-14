@@ -1,4 +1,5 @@
 const router = require("express").Router();
+// const app = require("express");
 const {
   readFromFile,
   readAndAppend,
@@ -24,9 +25,7 @@ router.post("/notes", (req, res) => {
       text,
       note_id: uuidv4(),
     };
-    console.log("ReadandAppend called");
     readAndAppend(newNote, "./db/db.json");
-    console.log(newNote);
     res.json(newNote);
   } else {
     res.error(`Error creating note.`);
@@ -34,7 +33,8 @@ router.post("/notes", (req, res) => {
 });
 
 router.delete("/notes/:id", (req, res) => {
-  readAndDelete(newNote, "./db/db.json");
+  const noteId = req.params.note_id;
+  readAndDelete(noteId, "./db/db.json");
   res.json("Sucess - Note Deleted");
 });
 
