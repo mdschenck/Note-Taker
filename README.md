@@ -1,4 +1,4 @@
-# Note-Taker
+# Note-Taker ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 A remotely hosted note taking application. A Node.js Express application hosted remotely on the Heroku platform. Allows user input for a list of notes, to-do's or shopping list items. The list items persist in a JSON format database, and can be deleted when complete.
 
@@ -46,4 +46,4 @@ Notes Screen:
 
 # License
 
-MIT
+MIT - https://opensource.org/licenses/MIT
