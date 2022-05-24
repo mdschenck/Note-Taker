@@ -43,7 +43,7 @@ const readAndDelete = (content, file) => {
     } else {
       const parsedData = JSON.parse(data);
 
-      const filteredData = parsedData.filter((note) => {
+      const filteredData = parsedData.filter((content) => {
         return note.id !== content;
       });
 
